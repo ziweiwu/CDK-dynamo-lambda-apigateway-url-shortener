@@ -1,6 +1,5 @@
 from aws_cdk import core, aws_dynamodb, aws_lambda, aws_apigateway
-from traffico import Traffico
-
+from cdk_watchful import Watchful
 
 class UrlShortenerStack(core.Stack):
 
@@ -23,3 +22,5 @@ class UrlShortenerStack(core.Stack):
 
         api = aws_apigateway.LambdaRestApi(self, "api", handler=function)
 
+        wf=Watchful(self, 'monitoring', alarm_email="ziweiwu@gmail.com")
+        wf.watch_scope(self)

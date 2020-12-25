@@ -9,4 +9,4 @@ class TrafficStack(core.Stack):
 
         Traffico(self, 'TestTraffic',
                  url="https://09d3aqkv89.execute-api.us-east-1.amazonaws.com/prod",
-                 tps=10)
+                 tps=100)
