@@ -1,6 +1,7 @@
 from aws_cdk import core, aws_dynamodb, aws_lambda, aws_apigateway
 from cdk_watchful import Watchful
 
+
 class UrlShortenerStack(core.Stack):
 
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs) -> None:
@@ -22,5 +23,5 @@ class UrlShortenerStack(core.Stack):
 
         api = aws_apigateway.LambdaRestApi(self, "api", handler=function)
 
-        wf=Watchful(self, 'monitoring', alarm_email="ziweiwu@gmail.com")
+        wf = Watchful(self, 'monitoring', alarm_email="ziweiwu@gmail.com")
         wf.watch_scope(self)
